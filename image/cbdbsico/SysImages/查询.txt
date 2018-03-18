@@ -1,0 +1,146 @@
+    ''' <summary>
+    ''' 通过传入图形在图层中查询满足指定空间关系的地物(显示和后台保存数据是异步的)。
+    ''' </summary>
+    ''' <param name="p_Geometry">输入：选择地物的几何图形。</param>
+    ''' <param name="p_SpatialRel">输入：选择地物的几何关系。</param>
+    ''' <param name="p_IsShow">输入：是否显示选择结果。</param>
+    ''' <param name="p_SelectionResultModel">输入：生成选择结果的方式。</param>
+    ''' <remarks></remarks>
+    <CLSCompliant(False)> _
+    Public Sub SelectFeatures(ByVal p_Geometry As IGeometry, ByVal p_SpatialRel As esriSpatialRelEnum, ByVal p_IsShow As Boolean, ByVal p_SelectionResultModel As esriSelectionResultEnum)
+        '
+        ' 	this.m_IsShow=p_IsShow
+        '   使用ISpatialFilter接口构造过滤条件
+        '   使用IFeatureSelection.SelectFeatures高亮显示选中的地物
+        '   使用IFeatureLayer.Search得到选中地物的集合,根据p_SelectionResultModel处理选中地物的集合和m_FeatArray中地物
+        ' 
+
+        Dim pFeatureSelection As IFeatureSelection = Layer
+        If p_IsShow = True Then '在每次选择前清空上次的选择集
+            If p_SelectionResultModel = esriSelectionResultEnum.esriSelectionResultNew Then
+                pFeatureSelection.Clear()
+            End If
+        Else
+            If p_SelectionResultModel = esriSelectionResultEnum.esriSelectionResultNew Then
+                m_SelectedFeatures.Clear()
+            End If
+        End If
+
+        '输入对象为空时清空选择集
+        If p_Geometry Is Nothing Then
+            Exit Sub
+        End If
+        '对于非要素层不能进行选择
+        If Not TypeOf Layer Is IFeatureLayer Then
+            Exit Sub
+        End If
+
+        Dim pGeometry As IGeometry '用来查找的图形的复制品，避免对图形的修改（SimplyFy会更改结点顺序)
+        Dim pClone As IClone = p_Geometry
+        pGeometry = pClone.Clone
+
+        If pGeometry.IsEmpty Then '输入图形为空时清空选择集（2003.3.11）
+            Exit Sub
+        End If
+        Dim pEnve As ESRI.ArcGIS.Geometry.IEnvelope
+        Dim pPolygon As ESRI.ArcGIS.Geometry.IPolygon
+        Dim pPolyLine As ESRI.ArcGIS.Geometry.IPolyline
+        Select Case pGeometry.GeometryType
+            Case ESRI.ArcGIS.Geometry.esriGeometryType.esriGeometryEnvelope
+                pEnve = pGeometry
+                If pEnve.Height = 0 Or pEnve.Width = 0 Then
+                    Exit Sub
+                End If
+            Case ESRI.ArcGIS.Geometry.esriGeometryType.esriGeometryPolygon
+                pPolygon = pGeometry
+                If pPolygon.Length = 0 Then
+                    Exit Sub
+                End If
+            Case ESRI.ArcGIS.Geometry.esriGeometryType.esriGeometryPolyline
+                pPolyLine = pGeometry
+                If pPolyLine.Length = 0 Then
+                    Exit Sub
+                End If
+        End Select
+
+        If TypeOf pGeometry Is ESRI.ArcGIS.Geometry.ITopologicalOperator Then
+            Dim pTopo As ESRI.ArcGIS.Geometry.ITopologicalOperator = pGeometry
+            pTopo.Simplify()
+        End If
+
+        Dim pFeaturelayer As IFeatureLayer = Layer
+        '********构造空间查询条件***********
+        Dim pSpatialfilter As ISpatialFilter
+        pSpatialfilter = New SpatialFilter
+        pSpatialfilter.Geometry = pGeometry
+        pSpatialfilter.GeometryField = pFeaturelayer.FeatureClass.ShapeFieldName
+        pSpatialfilter.SpatialRel = p_SpatialRel
+        '*********************************************
+
+        'Dim pTempArray As ESRI.ArcGIS.esriSystem.IArray
+        If p_IsShow Then '需高亮显示
+            Try
+                pFeatureSelection.SelectFeatures(pSpatialfilter, p_SelectionResultModel, False)
+            Catch ex As Exception
+                Msg.ShowErMessage(Me.Debug, Me.GetType.Name, "SelectFeatures()", "在选择地物时，执行查询错误！", ex.ToString)
+            End Try
+        Else '将结果加到FeaureCursor中
+            Dim pFeatCursor As IFeatureCursor = pFeaturelayer.Search(pSpatialfilter, False)
+            Dim pFeature As IFeature = pFeatCursor.NextFeature
+            Dim i As Integer
+            Select Case p_SelectionResultModel
+                Case esriSelectionResultEnum.esriSelectionResultNew
+                    m_SelectedFeatures.Clear()
+                    Do While Not pFeature Is Nothing
+                        m_SelectedFeatures.Add(pFeature)
+                        pFeature = pFeatCursor.NextFeature
+                    Loop
+                Case esriSelectionResultEnum.esriSelectionResultAdd
+                    Do While Not pFeature Is Nothing
+                        For i = 0 To m_SelectedFeatures.Count - 1
+                            If m_SelectedFeatures.Item(i) Is pFeature Then Exit For
+                        Next i
+                        If i = m_SelectedFeatures.Count Then
+                            m_SelectedFeatures.Add(pFeature)
+                        End If
+                        pFeature = pFeatCursor.NextFeature
+                    Loop
+                Case esriSelectionResultEnum.esriSelectionResultSubtract
+                    Do While Not pFeature Is Nothing
+                        For i = 0 To m_SelectedFeatures.Count - 1
+                            If m_SelectedFeatures.Item(i) Is pFeature Then Exit For
+                        Next i
+                        If i < m_SelectedFeatures.Count Then
+                            m_SelectedFeatures.RemoveAt(i)
+                        End If
+                        pFeature = pFeatCursor.NextFeature
+                    Loop
+                Case esriSelectionResultEnum.esriSelectionResultAnd
+                    Dim mTempFeatures As New List(Of IFeature)
+                    Do While Not pFeature Is Nothing
+                        For i = 0 To m_SelectedFeatures.Count - 1
+                            If m_SelectedFeatures.Item(i) Is pFeature Then
+                                mTempFeatures.Add(pFeature)
+                                Exit For
+                            End If
+                        Next i
+                        pFeature = pFeatCursor.NextFeature
+                    Loop
+                    m_SelectedFeatures = mTempFeatures
+                Case esriSelectionResultEnum.esriSelectionResultXOR
+                    Do While Not pFeature Is Nothing
+                        For i = 0 To m_SelectedFeatures.Count - 1
+                            If m_SelectedFeatures.Item(i) Is pFeature Then Exit For
+                        Next i
+                        If i = m_SelectedFeatures.Count Then
+                            m_SelectedFeatures.Add(pFeature)
+                        Else
+                            m_SelectedFeatures.RemoveAt(i)
+                        End If
+                        pFeature = pFeatCursor.NextFeature
+                    Loop
+                Case Else
+                    m_SelectedFeatures.Clear()
+            End Select
+        End If
+    End Sub

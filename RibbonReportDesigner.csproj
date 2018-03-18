@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1A968DF-ED8F-4284-A6D8-ED60E6838B09}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RibbonReportDesigner</RootNamespace>
+    <AssemblyName>RibbonReportDesigner</AssemblyName>
+    <ApplicationIcon>RibbonReportDesignerIcon.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.OfficeSkins.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v10.2.Core, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v10.2.Core">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v10.2.Core">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2">
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2.Extensions">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>
+      </HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2.Core, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v10.2.Extensions, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CbdResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CbdResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsSynchronizer.cs" />
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISplashForm.cs" />
+    <Compile Include="LicenseInitializer.cs" />
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps.cs" />
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrivateResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CbdResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CbdResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrivateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrivateResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>XRDesignRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="SkinGalleryHelper.cs" />
+    <Compile Include="Splasher.cs" />
+    <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XRDesignRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RibbonReportDesignerIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\EMail_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\GenerateData_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\GenerateData_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\Help_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\Help_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\Other_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\Other_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\photoico\Icon\Upload_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_0176.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_0193.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_0212.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_0214.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_0216.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0306.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0328.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0335.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0336.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0337.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0338.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0339.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0340.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0341.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0342.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0344.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0345.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0346.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0347.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0348.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0349.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0350.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0351.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\feichuang_0352.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1257.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1258.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1259.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1260.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1261.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1264.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1554.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1918.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1951.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\cbdbsico\SysImages\Feichuang_1952.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图201410092357361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图201410100003011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\da.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20141010002910.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002708.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002755.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002803.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002838.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002848.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002906.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002920.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002940.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002949.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010002959.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003006.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003027.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003058.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003406.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003410.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003417.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003436.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003443.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20141010003449.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图2014100923573611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图2014101000030111.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

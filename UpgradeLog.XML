@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="RibbonReportDesigner">
+</Property><Property Name="解决方案文件" Value="E:\gis_code\RibbonReportDesigner\RibbonReportDesigner.sln">
+</Property><Property Name="Date" Value="2014年10月4日">
+</Property><Property Name="Time" Value="11:10">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="RibbonReportDesigner.sln" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\RibbonReportDesigner.sln">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="RibbonReportDesigner.csproj" Description="项目文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\RibbonReportDesigner.csproj">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="MainForm.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\MainForm.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="MainForm.Designer.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\MainForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="PrintRibbonControllerResources.Designer.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\PrintRibbonControllerResources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="Program.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="Properties\AssemblyInfo.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="Properties\Resources.Designer.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="SkinGalleryHelper.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\SkinGalleryHelper.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="XRDesignRibbonControllerResources.Designer.cs" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\XRDesignRibbonControllerResources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="MainForm.resx" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="PrintRibbonControllerResources.resx" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\PrintRibbonControllerResources.resx">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="Properties\Resources.resx" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="XRDesignRibbonControllerResources.resx" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\XRDesignRibbonControllerResources.resx">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="RibbonReportDesignerIcon.ico" Description="文件已成功备份为 E:\gis_code\RibbonReportDesigner\Backup\RibbonReportDesignerIcon.ico">
+</Event><Event ErrorLevel="1" Project="RibbonReportDesigner" Source="RibbonReportDesigner.csproj" Description="您的项目以 .NET Framework 2.0 或 3.0 为目标。如果您的项目使用的程序集需要更新的 .NET Framework，则项目生成将失败。通过单击项目菜单上的“属性”，然后在“.NET Framework”下拉框中选择一个新版本，可以更改 .NET Framework 的版本。(在 Visual Basic 中，可在单击“高级编辑器选项...”按钮时显示的“编译”选项卡上找到此下拉框。)">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="RibbonReportDesigner.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="RibbonReportDesigner" Source="RibbonReportDesigner.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="RibbonReportDesigner.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="RibbonReportDesigner.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="RibbonReportDesigner" Source="RibbonReportDesigner.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
